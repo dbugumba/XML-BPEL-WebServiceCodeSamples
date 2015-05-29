@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:processingOrderForm xmlns:tns="http://www.open.ac.uk/dpb285/processingOrderForm" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.open.ac.uk/dpb285/processingOrderForm processingOrderForm.xsd ">
+  <tns:clientDetails>
+    <tns:organizationName>J Jarndyce Ltd</tns:organizationName>
+    <tns:postalAddress>Bleak House, Fort Road, Broadstairs CT10 1EY</tns:postalAddress>
+    <tns:email>jjarndyce@hotmail.com</tns:email>
+    <tns:phone>01234 567890</tns:phone>
+    <tns:accountNumber>1783</tns:accountNumber>
+  </tns:clientDetails>
+  <tns:fixRequired>
+    <tns:processingnstructions>
+      <tns:correctExposure>
+        <tns:required>false</tns:required>
+      </tns:correctExposure>
+      <tns:resizeImage>
+        <tns:required>false</tns:required>
+      </tns:resizeImage>
+      <tns:colourBalance>
+        <tns:required>true</tns:required>
+      </tns:colourBalance>
+      <tns:sharpen>
+        <tns:required>false</tns:required>
+      </tns:sharpen>
+      <tns:blurBackground>
+        <tns:required>false</tns:required>
+      </tns:blurBackground>
+      <tns:createComposite>
+        <tns:required>true</tns:required>
+      </tns:createComposite>
+      <tns:repairImageFading>
+        <tns:required>false</tns:required>
+      </tns:repairImageFading>
+      <tns:other>
+        <tns:required>false</tns:required>
+      </tns:other>
+    </tns:processingnstructions>
+    <tns:forComposite>
+      <tns:imageAttached>
+        <tns:required>false</tns:required>
+      </tns:imageAttached>
+      <tns:libraryImageRequired>
+        <tns:required>true</tns:required>
+      </tns:libraryImageRequired>
+    </tns:forComposite>
+    <tns:librarySearchKeywords>european courtroom judge law</tns:librarySearchKeywords>
+    <tns:specialInstructions>resize to A4</tns:specialInstructions>
+    <tns:dateSubmitted>2008-10-20</tns:dateSubmitted>
+  </tns:fixRequired>
+  <tns:results>
+    <tns:imageSize>
+      <tns:small>
+        <tns:required>false</tns:required>
+      </tns:small>
+      <tns:medium>
+        <tns:required>false</tns:required>
+      </tns:medium>
+      <tns:large>
+        <tns:required>true</tns:required>
+      </tns:large>
+    </tns:imageSize>
+    <tns:returnResultsBy>
+      <tns:CD-ROM>
+        <tns:required>true</tns:required>
+      </tns:CD-ROM>
+      <tns:email>
+        <tns:required>false</tns:required>
+      </tns:email>
+      <tns:hardcopy>
+        <tns:required>false</tns:required>
+      </tns:hardcopy>
+    </tns:returnResultsBy>
+  </tns:results>
+</tns:processingOrderForm>
