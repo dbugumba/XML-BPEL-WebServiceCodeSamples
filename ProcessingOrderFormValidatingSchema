@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.open.ac.uk/dpb285/processingOrderForm"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://www.open.ac.uk/dpb285/processingOrderForm">
+
+    <complexType name="processingOrderFormType">
+    	<sequence>
+    		<element name="clientDetails" type="tns:clientDetailsType"></element>
+    		<element name="fixRequired" type="tns:fixRequiredType"></element>
+    		<element name="results" type="tns:resultsType"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="processingOrderForm"
+    	type="tns:processingOrderFormType">
+    </element>
+
+    <complexType name="clientDetailsType">
+    	<sequence>
+    		<element name="organizationName" type="string"></element>
+    		<element name="postalAddress" type="string"></element>
+    		<element name="email" type="string"></element>
+    		<element name="phone" type="string"></element>
+    		<element name="accountNumber" type="string"></element>   Account number is optional (says “if applicable” on the form), so should have minOccurs=”0”
+    	</sequence>
+    </complexType>
+    
+    <complexType name="fixRequiredType">
+    	<sequence>
+    		<element name="processingnstructions" type="tns:processingInstructionsType"></element>
+    		<element name="forComposite" type="tns:forCompositeType"></element>
+    		<element name="librarySearchKeywords">
+    			<simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    					<maxLength value="28"></maxLength>   This seems quite a low number for the maximum field size.
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="specialInstructions">
+    			<simpleType>
+    				<restriction base="string">
+    					<minLength value="1"></minLength>
+    					<maxLength value="100"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="dateSubmitted" type="date"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="requiredType">
+		<sequence>
+			<element name="required" type="boolean"></element>
+		</sequence>
+	</complexType>
+
+    <complexType name="resultsType">
+    	<sequence>
+    		<element name="imageSize" type="tns:imageSizeType"></element>
+    		<element name="returnResultsBy" type="tns:returnResultsByType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="processingInstructionsType">
+    	<sequence>
+    		<element name="correctExposure" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="resizeImage" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="colourBalance" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="sharpen" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="blurBackground" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="createComposite" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="repairImageFading" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="other" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="forCompositeType">
+    	<sequence>
+    		<element name="imageAttached" type="tns:requiredType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="libraryImageRequired" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="imageSizeType">
+    	<sequence>
+    		<element name="small" type="tns:requiredType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="medium" type="tns:requiredType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="large" type="tns:requiredType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="returnResultsByType">
+    	<sequence>
+    		<element name="CD-ROM" type="tns:requiredType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="email" type="tns:requiredType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="hardcopy" type="tns:requiredType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema> 
